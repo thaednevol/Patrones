@@ -1,0 +1,30 @@
+package txt;
+
+import java.util.*;
+
+public class Category {
+
+  private HashMap<String, Item> items;
+  private String desc;
+
+  public Category(String s) {
+    desc = s;
+    items = new HashMap<String, Item>();
+  }
+
+  public String getDesc() {
+    return desc;
+  }
+  public void add(Item i) {
+    items.put(i.getDesc(), i);
+    System.out.println("Item '" + i.getDesc() +
+                       "' has been added to the '" + 
+                       getDesc() + "' Category ");
+  }
+  public void delete(Item i) {
+    items.remove(i.getDesc());
+    System.out.println("Item '" + i.getDesc() +
+                       "' has been deleted from the '" + 
+                       getDesc() + "' Category ");
+  }
+}
